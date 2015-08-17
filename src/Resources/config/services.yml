@@ -1,0 +1,16 @@
+parameters:
+    kb_paginated_request.query.default_value.page: 1
+    kb_paginated_request.query.default_value.max_results: 10
+    kb_paginated_request.query.parameter_name.page: page
+    kb_paginated_request.query.parameter_name.max_results: max_results
+
+services:
+    kb_paginated_request.event_listener.paginated_request:
+        class: KieranBamforth\Bundle\PaginatorBundle\EventListener\PaginatedRequestListener
+        arguments:
+          - %kb_paginated_request.query.parameter_name.page%
+          - %kb_paginated_request.query.default_value.page%
+          - %kb_paginated_request.query.parameter_name.max_results%
+          - %kb_paginated_request.query.default_value.max_results%
+        tags:
+            - { name: kernel.event_listener, event: kernel.controller, method: onKernelController }
