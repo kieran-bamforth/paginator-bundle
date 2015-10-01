@@ -6,7 +6,7 @@ Yet another paginator bundle.
  - Extracts the maximum amount of items to show from the URL.
  - Works out the offset of items by using the page number + maximum amount of items to show.
 
-# Installation
+# Installation (2 steps)
 ---
 
 ## Step 1: Download the Bundle
@@ -48,7 +48,7 @@ class AppKernel extends Kernel
 }
 ```
 
-# Usage
+# Usage (2 steps)
 ---
 ## Step 1: Inject  PaginatedRequest into Controller Actions
 The bundle will automatically inject a PaginatedRequest object into any controller action that takes PaginatedRequest as a parameter.
